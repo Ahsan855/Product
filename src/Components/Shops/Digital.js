@@ -2,6 +2,7 @@ import React from 'react';
 import './Digital.css'
 
 const Digital = () => {
+    const [products, setProduct]=useState([])
     return (
         <div className='shop'>
             <div className="products">
