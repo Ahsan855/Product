@@ -9,9 +9,14 @@ const Card = ({ card }) => {
     names = info.name;
   }
   return (
-    <div className="card">
-      <img className="card-image" src={img} alt="" />
-      <h3>{names}</h3>
+    <div>
+      <div>
+        <h2>This is Digital Markiting!!</h2>
+      </div>
+      <div className="cards">
+        <img className="card-image" src={img} alt="" />
+        <h3>{names}</h3>
+      </div>
     </div>
   );
 };
