@@ -5,24 +5,30 @@ import "./Shop.css";
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
+  const [card, setCard] = useState([]);
   useEffect(() => {
     // console.log('product before age');
     fetch("products.json")
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
+  const addToCard = (product) => {
+    const newCard = [...card, product];
+    setCard(newCard);
+  };
   return (
     <div className="shop-container">
       <div className="products-container">
         {products.map((product) => (
           <Product
             key={product.id}
-            product={product}>
-            </Product>
+            product={product}
+            addToCard={addToCard}
+          ></Product>
         ))}
       </div>
       <div className="cart-container">
-        <Card></Card>
+        <Card card={card}></Card>
       </div>
     </div>
   );
